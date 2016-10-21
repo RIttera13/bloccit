@@ -1,5 +1,15 @@
 require 'random_data'
 
+
+Post.find_or_create_by(title: "Seeded Post Title", body: "Seeded Post Body")
+
+given = Post.find_by_title("Seeded Post Title")
+
+Comment.find_or_create_by(
+post: given,
+body: "Body has a Seeded Post"
+)
+
 50.times do
   Post.create!(
     title:  RandomData.random_sentence,
