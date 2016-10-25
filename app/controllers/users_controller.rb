@@ -18,5 +18,14 @@ class UsersController < ApplicationController
       render :new
     end
   end
-  
+
+  def confirm
+    @user = User.new
+    @user.name = params[:user][:name]
+    @user.email = params[:user][:email]
+    if @user.save
+      flash[:notice] = "Welcome to Bloccit #{@user.name}!"
+      redirect_to root_path
+    end
+  end
 end
