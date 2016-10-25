@@ -2,9 +2,27 @@
 @import "bootstrap";
 
 .user-info {
-  margin-top: 9px;
+  vertical-align: text-top;
+}
+
+.user-name {
+  margin: 0px;
+  right: -59px;
+  top: -11px;
+  position: relative;
+  display: inline-block;
+
+}
+
+.user-out {
+  position: relative;
+  top: 16px;
 }
 
 .nav {
   margin-top: 5px;
+}
+
+.user-image {
+  margin-left: 10px;
 }
