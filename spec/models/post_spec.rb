@@ -79,5 +79,14 @@ RSpec.describe Post, type: :model do
         expect(post.rank).to eq (old_rank - 1)
       end
     end
+
+    describe "#create_vote" do
+
+      it "called when a post is created" do
+        post = topic.posts.new(title: RandomData.random_sentence, body: RandomData.random_sentence, user: user)
+        expect(post).to receive(:create_vote)
+        post.save
+      end
+    end
   end
 end
