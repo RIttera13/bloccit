@@ -3,7 +3,7 @@
   <h1>
     <%= @post.title %> <br>
     <small>
-      submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %>
+      submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= link_to @post.user.name, user_path(@post.user) %>
     </small>
   </h1>
 </div>
